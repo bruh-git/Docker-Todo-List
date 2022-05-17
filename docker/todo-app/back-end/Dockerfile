@@ -1,6 +1,7 @@
 FROM node:14-alpine
 EXPOSE 3001
-COPY . /app
-RUN chown -R node:node /app
+WORKDIR /todo/backend
+ADD ./node_modules.tar.gz ./
 USER node
-CMD npm start
+COPY . .
+ENTRYPOINT [ "npm","start"]
