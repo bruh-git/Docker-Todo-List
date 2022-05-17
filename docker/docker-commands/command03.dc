@@ -1,1 +1,1 @@
-docker ps -a -f 01container
+docker ps --filter "01container"
